@@ -1,0 +1,6 @@
+Data nodes are not smart, but they are resilient. 
+Within the HDFS cluster, data blocks are replicated across multiple data nodes and access is managed by the NameNode and uses a “rack ID” to keep track of the data nodes in the cluster.
+HDFS clusters are sometimes referred to as being “rack-aware.” 
+Data nodes also provide “heartbeat” messages to detect and ensure connectivity between the NameNode and the data nodes. 
+When a heartbeat is no longer present, the NameNode unmaps the data node from the cluster and keeps on operating, as though nothing happened. 
+When the heartbeat returns (or a new heartbeat appears), it is added to the cluster transparently with respect to the user or application
